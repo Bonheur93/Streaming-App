@@ -32,7 +32,7 @@ function Login() {
             {showLoginButton ?
             <GoogleLogin
                 clientId= {clientId}
-                buttonText="Login"
+                buttonText="Login with a google account"
                 onSuccess={onLoginSuccess}
                 onFailure={onFailureSuccess}
                 cookiePolicy={'single_host_origin'}

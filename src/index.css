@@ -1,19 +1,79 @@
+body{
+ 
+  background-color: rgb(44, 42, 42);
+  margin: 0%;
+  height: 0%;
+  
+}
+
 .login{
-  position: absolute;
-  top : 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -50px;
+  margin: auto;
+  text-align: center;
+  align-content: center;
 }
 .container{
+  display: flex;
+  flex-direction: column;
   background-color: rgb(80, 85, 101);
-  height: 800px;
+  /* height: 500px; */
+  /* margin-top:50px; */
+  border-radius: 0px 10px 10px 0px;
+  /* margin-left: -1px;
+  margin-right : 100; */
+  width: 100%;
+  
 }
 
 .connect{
-  position: absolute;
+
   top : 50%;
   left: 50%;
-  margin-top: -50px;
-  margin-left: -50px;
+  /* margin-top: -70px; */
+  margin:auto;
+  
+}
+.Imghome > .imghome{
+  margin-top: -70px;
+  margin-left: 850px;
+  display: flex;
+  align-items: right;
+  height: 280px;
+  width: 150px;
+}
+.imghome{
+  border-radius: 10px;
+  box-shadow: 10px;
+}
+.logoasider{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: left;
+}
+.bonlogo{
+  height: 45px;
+  border-radius: 50px;
+}
+.containerAside{
+  /* margin-top: 50px;
+  margin-left: 15px; */
+  background-color: black;
+  padding-left: 20px;
+  height: 100%;
+  width: 200px;
+
+}
+.main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: wheat;
+  height: 100vh;
+
+
+}
+.logoasider{
+  padding-top: 20px;
+  padding-right: 25px;
+  color: wheat;
 }

@@ -1,21 +1,32 @@
-import React  from "react";
+import React from "react";
 import Login from "./Login";
+import Asider from "./Asider";
 
 
-function Body(){
+function Body() {
 
 
     return (
 
-
-        <div className="container" >
-            <p className="connect">Connect with your account</p>
-            <div  className="login" >
-            <Login />
+        <main className="main">
+            <div className="ContainerAsider">
+                <Asider />
             </div>
-           
-        </div>
+            <div className="container" >
+
+                <h1 className="connect">Welcome to the Sky Music</h1>
+                <div className="Imghome">
+                    <img className="imghome" src="imghome.jpeg" alt="" />
+                </div>
+
+                <div className="login" >
+                    <Login />
+                </div>
+
+            </div>
+        </main>
+
     )
 }
-export default Body 
+export default Body
 

@@ -77,3 +77,8 @@ body{
   padding-right: 25px;
   color: wheat;
 }
+.artist{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr  ;
+ 
+}

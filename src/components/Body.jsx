@@ -66,20 +66,24 @@ function Body() {
 
 
             <div className="container" >
+
                 <header className="header">
                     <div className="connectToSpotify" >
                         <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Connectez-vous</a>
                     </div>
 
-                    <form onSubmit={searchArtists}>
+                    <form className="search" onSubmit={searchArtists}>
                         <input type="text" onChange={e => setSearchKey(e.target.value)} />
                         <button type={"submit"}>Search</button>
                     </form>
 
                 </header>
 
+                
+
             
                 <div className="ContainerArtistes">
+                <div class="lds-ripple"><div></div><div></div></div>
                     {renderArtists()}
                 </div>
 

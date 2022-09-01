@@ -129,10 +129,11 @@ a>h5 {
   justify-content: flex-end;
   margin-top: 25px;
   margin-right: 20px;
+  gap: 2px;
 }
 
 .header {
-  background-color: black;
+  background-color:  rgb(109, 106, 103);
   position: sticky;
   height: 100px;
   margin-left: -11px;

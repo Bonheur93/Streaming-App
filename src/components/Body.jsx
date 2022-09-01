@@ -69,7 +69,9 @@ function Body() {
 
                 <header className="header">
                     <div className="connectToSpotify" >
+                    <img className="library" src="login.svg" alt="" />
                         <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Connectez-vous</a>
+                        
                     </div>
 
                     <form className="search" onSubmit={searchArtists}>

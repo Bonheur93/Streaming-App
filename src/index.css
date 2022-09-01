@@ -1,38 +1,43 @@
-body{
+/* body{
  
-  background-color: rgb(44, 42, 42);
-  margin: 0%;
-  height: 0%;
-  
+  background-color: rgb(207, 59, 59);
+
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.login{
+.login {
   margin: auto;
   text-align: center;
   align-content: center;
 }
-.container{
+
+.container {
   display: flex;
   flex-direction: column;
   background-color: rgb(80, 85, 101);
   /* height: 500px; */
   /* margin-top:50px; */
-  border-radius: 0px 10px 10px 0px;
   /* margin-left: -1px;
   margin-right : 100; */
   width: 100%;
-  
+  height: 900px;
+
 }
 
-.connect{
+.connect {
 
-  top : 50%;
+  top: 50%;
   left: 50%;
   /* margin-top: -70px; */
-  margin:auto;
-  
+  margin: auto;
+
 }
-.Imghome > .imghome{
+
+.Imghome>.imghome {
   margin-top: -70px;
   margin-left: 850px;
   display: flex;
@@ -40,30 +45,35 @@ body{
   height: 280px;
   width: 150px;
 }
-.imghome{
+
+.imghome {
   border-radius: 10px;
   box-shadow: 10px;
 }
-.logoasider{
+
+.logoasider {
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: left;
 }
-.bonlogo{
+
+.bonlogo {
   height: 45px;
   border-radius: 50px;
 }
-.containerAside{
+
+.containerAside {
   /* margin-top: 50px;
   margin-left: 15px; */
-  background-color: black;
+  background-color: rgb(109, 106, 103);
   padding-left: 20px;
   height: 100%;
   width: 250px;
 
 }
-.main{
+
+.main {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -72,13 +82,69 @@ body{
 
 
 }
-.logoasider{
+
+.logoasider {
   padding-top: 20px;
   padding-right: 25px;
-  color: wheat;
+  color: rgb(241, 239, 233);
 }
-.artist{
+
+.artist {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr  ;
- 
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.bibliothec {
+  margin-left: 20px;
+  margin-top: 50px;
+
+}
+
+.Library {
+  display: flex;
+  gap: 15px;
+}
+
+.library {
+  width: 30px;
+}
+
+.lienRef {
+  color: wheat;
+
+}
+
+a>h5 {
+  text-decoration: none;
+}
+
+.containerLibrairie {
+  margin-left: -25px;
+
+}
+
+.connectToSpotify {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.header {
+  background-color: black;
+  position: sticky;
+  top: 20px;
+  height: 100px;
+  margin-left: -11px;
+  margin-right: -11px;
+
+}
+
+.ContainerArtistes {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(16, 17, 26);
+  width: 100%;
+  height: 100%;
+  gap: 10px;
 }

@@ -35,8 +35,8 @@ function Body() {
     const renderArtists = () => {
         return artists.map(artist => (
             <div key={artist.id}>
-                {artist.album.images.length ? <img width={"25%"} src={artist.album.images[0].url} alt=""/> : <div>No Image</div>}
-                {artist.uri}
+                {artist.album.images.length ? <img width={150} src={artist.album.images[0].url} alt="" /> : <div>No Image</div>}
+                {/* {artist.uri} */}
             </div>
         ))
     }
@@ -66,19 +66,23 @@ function Body() {
 
 
             <div className="container" >
-                <header>
-                    <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Connectez-vous sur spotify</a>
+                <header className="header">
+                    <div className="connectToSpotify" >
+                        <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Connectez-vous</a>
+                    </div>
+
                     <form onSubmit={searchArtists}>
                         <input type="text" onChange={e => setSearchKey(e.target.value)} />
                         <button type={"submit"}>Search</button>
                     </form>
-                    <div className="artist">
-                    {renderArtists()}
-                    </div>
-                    
+
                 </header>
 
-                <h1 className="connect">Welcome to the Sky Music</h1>
+            
+                <div className="ContainerArtistes">
+                    {renderArtists()}
+                </div>
+
 
                 <div className="login" >
 

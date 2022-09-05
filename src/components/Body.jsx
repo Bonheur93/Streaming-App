@@ -3,14 +3,14 @@ import Login from "./Login";
 import Asider from "./Asider";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Playlist from "./components/Playlist";
+
 
 
 
 
 function Body() {
 
-    const PLAYLIST_ENDPOINT = "https://api.spotify.com/v1/me/playlists"
+    const PLAYLIST_ENDPOINT = "https://api.spotify.com/v1/playlists/37i9dQZF1DWWY64wDtewQt"
 
     const CLIENT_ID = "93f33402d44f4128935734c09ea4fc41"
     const REDIRECT_URI = "http://localhost:5173"
@@ -25,26 +25,31 @@ function Body() {
 
     const handleGetPlaylist = () => {
         axios
-            .get(PLAYLIST_ENDPOINT), {
-                // headers: {
-                //     Authorization: "Bearer" + token,
-                // },
-            }
-                // .then((response) => {
-                //     setData(response.data);
-                // })
+            .get(PLAYLIST_ENDPOINT, {
+                headers: {
+                    Authorization: "Bearer " + token,
+                    'Content-Type': 'application/json'
+                },
+            })
+                .then((response) => {
+                    console.log(response.data);
+                    setData(response.data);
+                })
         // .catch(error) => {
         //     console.log(error);
 
         // }
     };
-}
 
 
 
-const playlist = () => {
-    return <button onClick={handleGetPlaylist}>Playlist</button>
-}
+
+// const playlist = () => {
+//     return 
+    
+// }
+// playlist()
+// console.log(playlist)
 
 const searchArtists = async (e) => {
     e.preventDefault()
@@ -119,8 +124,9 @@ return (
 
 
             <div className="ContainerArtistes">
-                <div class="lds-ripple"><div></div><div></div></div>
+                <div className="lds-ripple"><div></div><div></div></div>
                 {renderArtists()}
+                <button onClick={handleGetPlaylist}>Playlist</button>
             </div>
 
 

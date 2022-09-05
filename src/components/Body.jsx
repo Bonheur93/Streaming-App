@@ -74,6 +74,14 @@ const renderArtists = () => {
     ))
 }
 
+const renderPlaylist = () =>{
+    return artists.map (artist => (
+        <div key = {artist.id}>
+             {artist.images.length ? <img width={150} src={artist.images[0].url} alt="" /> : <div>No Image</div>}
+        </div>
+    ))
+}
+
 
 useEffect(() => {
     const hash = window.location.hash
@@ -126,6 +134,7 @@ return (
             <div className="ContainerArtistes">
                 <div className="lds-ripple"><div></div><div></div></div>
                 {renderArtists()}
+                {renderPlaylist()}
                 <button onClick={handleGetPlaylist}>Playlist</button>
             </div>
 

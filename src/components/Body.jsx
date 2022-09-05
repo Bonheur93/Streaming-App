@@ -147,19 +147,22 @@ function Body() {
                         <img className="library" src="skip_next.svg" alt="" />
 
                     </div>
-                    
+
+                    <div className="containerProgress" >
                     <div className="OneProgressBarre">
                         <div className="TwoProgressbare">
 
                         </div>
                     </div>
+                    </div>
+                    
 
                 </footer>
-                <div className="login" >
+                {/* <div className="login" >
 
                     <Login />
                     <button onClick={handleGetPlaylist}>Playlist</button>
-                </div>
+                </div> */}
 
             </div>
         </main>

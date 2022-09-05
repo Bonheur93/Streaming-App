@@ -131,9 +131,9 @@ function Body() {
 
 
                 <div className="ContainerArtistes">
-                    <div className="lds-ripple"><div></div><div></div></div>
+                    {/* <div className="lds-ripple"><div></div><div></div></div> */}
                     {renderArtists()}
-                    {renderPlaylist()}
+                    {/* {renderPlaylist()} */}
                     
                 </div>
 

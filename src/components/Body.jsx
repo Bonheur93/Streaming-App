@@ -31,10 +31,10 @@ function Body() {
                     'Content-Type': 'application/json'
                 },
             })
-                .then((response) => {
-                    console.log(response.data);
-                    setData(response.data);
-                })
+            .then((response) => {
+                console.log(response.data);
+                setData(response.data);
+            })
         // .catch(error) => {
         //     console.log(error);
 
@@ -44,110 +44,127 @@ function Body() {
 
 
 
-// const playlist = () => {
-//     return 
-    
-// }
-// playlist()
-// console.log(playlist)
+    // const playlist = () => {
+    //     return 
 
-const searchArtists = async (e) => {
-    e.preventDefault()
-    const { data } = await axios.get("https://api.spotify.com/v1/search", {
-        headers: {
-            Authorization: `Bearer ${token}`
-        },
-        params: {
-            q: searchKey,
-            type: "track"
+    // }
+    // playlist()
+    // console.log(playlist)
+
+    const searchArtists = async (e) => {
+        e.preventDefault()
+        const { data } = await axios.get("https://api.spotify.com/v1/search", {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            params: {
+                q: searchKey,
+                type: "track"
+            }
+        })
+
+        setArtists(data.tracks.items)
+    }
+    const renderArtists = () => {
+        return artists.map(artist => (
+            <div key={artist.id}>
+                {artist.album.images.length ? <img width={150} src={artist.album.images[0].url} alt="" /> : <div>No Image</div>}
+                {/* {artist.uri} */}
+            </div>
+        ))
+    }
+
+    const renderPlaylist = () => {
+        return artists.map(artist => (
+            <div key={artist.id}>
+                {artist.images.length ? <img width={150} src={artist.images[0].url} alt="" /> : <div>No Image</div>}
+            </div>
+        ))
+    }
+
+
+    useEffect(() => {
+        const hash = window.location.hash
+        let token = window.localStorage.getItem("token")
+        if (localStorage.getItem("accessToken")) {
+            setToken(localStorage.getItem("accessToken"));
         }
-    })
 
-    setArtists(data.tracks.items)
-}
-const renderArtists = () => {
-    return artists.map(artist => (
-        <div key={artist.id}>
-            {artist.album.images.length ? <img width={150} src={artist.album.images[0].url} alt="" /> : <div>No Image</div>}
-            {/* {artist.uri} */}
-        </div>
-    ))
-}
+        if (!token && hash) {
+            token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
 
-const renderPlaylist = () =>{
-    return artists.map (artist => (
-        <div key = {artist.id}>
-             {artist.images.length ? <img width={150} src={artist.images[0].url} alt="" /> : <div>No Image</div>}
-        </div>
-    ))
-}
+            window.location.hash = ""
+            window.localStorage.setItem("token", token)
+        }
 
+        setToken(token)
 
-useEffect(() => {
-    const hash = window.location.hash
-    let token = window.localStorage.getItem("token")
-    if (localStorage.getItem("accessToken")) {
-        setToken(localStorage.getItem("accessToken"));
-    }
-
-    if (!token && hash) {
-        token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
-
-        window.location.hash = ""
-        window.localStorage.setItem("token", token)
-    }
-
-    setToken(token)
-
-}, []);
+    }, []);
 
 
 
-return (
+    return (
 
-    <main className="main">
-        <div className="ContainerAsider">
-            <Asider />
+        <main className="main">
+            <div className="ContainerAsider">
+                <Asider />
 
-        </div>
+            </div>
 
 
-        <div className="container" >
+            <div className="container" >
 
-            <header className="header">
-                <div className="connectToSpotify" >
-                    <img className="library" src="login.svg" alt="" />
-                    <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Connectez-vous</a>
+                <header className="header">
+                    <div className="connectToSpotify" >
+                        <img className="library" src="login.svg" alt="" />
+                        <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Connectez-vous</a>
 
+                    </div>
+
+                    <form className="search" onSubmit={searchArtists}>
+                        <input type="text" onChange={e => setSearchKey(e.target.value)} />
+                        <button type={"submit"}>Search</button>
+                    </form>
+
+                </header>
+
+
+
+                <div className="ContainerArtistes">
+                    <div className="lds-ripple"><div></div><div></div></div>
+                    {renderArtists()}
+                    {renderPlaylist()}
+                    
                 </div>
 
-                <form className="search" onSubmit={searchArtists}>
-                    <input type="text" onChange={e => setSearchKey(e.target.value)} />
-                    <button type={"submit"}>Search</button>
-                </form>
+                <footer className="footer">
+                    <div className="containerFoot">
+                        {/* <div className="containerButtonsPlay">
+                           
+                        </div> */}
+                        <img className="library" src="skip_previous.svg" alt="" />
+                        <img className="library" src="play_circle.svg" alt="" />
+                        <img className="library" src="skip_next.svg" alt="" />
 
-            </header>
+                    </div>
+                    
+                    <div className="OneProgressBarre">
+                        <div className="TwoProgressbare">
 
+                        </div>
+                    </div>
 
+                </footer>
+                <div className="login" >
 
+                    <Login />
+                    <button onClick={handleGetPlaylist}>Playlist</button>
+                </div>
 
-            <div className="ContainerArtistes">
-                <div className="lds-ripple"><div></div><div></div></div>
-                {renderArtists()}
-                {renderPlaylist()}
-                <button onClick={handleGetPlaylist}>Playlist</button>
             </div>
+        </main>
 
-
-            <div className="login" >
-
-                <Login />
-            </div>
-
-        </div>
-    </main>
-
-)
+    )
 }
 export default Body
 

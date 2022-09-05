@@ -205,3 +205,28 @@ a>h5 {
     opacity: 0;
   }
 }
+.containerFoot{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  
+}
+.footer{
+  height: 100px;
+  width: 100%;
+  background-color: rgb(66, 64, 64);
+}
+.OneProgressBarre{
+  height: 10px;
+  width: 500px;
+  background-color: grey;
+  border-radius: 50px;
+}
+.TwoProgressbare{
+  height: 10px;
+  width: 50%;
+  background-color: white;
+  border-radius: 50px;
+
+}

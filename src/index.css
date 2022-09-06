@@ -151,8 +151,9 @@ a>h5 {
 }
 
 .ContainerArtistes {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* flex-wrap: wrap; */
   background-color: rgb(16, 17, 26);
   width: 100%;
   height: 100%;

@@ -62,12 +62,15 @@ function Body() {
             {artist.album.images.length ? (
               <>
               <iframe style={{borderRadius:"12px"}} src={`https://open.spotify.com/embed/album/${artist.album.id}?utm_source=generator`} width="100%" height="100px" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              <img width={200} src={artist.album.images[0].url} alt="" />
+              <img width={250} src={artist.album.images[0].url} alt="" />
               </>
             ) : (
               <div>No Image</div>
             )}
+            <div className="ArtistName">
             {artist.name}
+            </div>
+            
           </div>
         ));
             }

@@ -249,3 +249,9 @@ a>h5 {
   border-radius: 50px;
 
 }
+.ArtistName{
+  color: white;
+  font-family: inter;
+  font-weight: bold;
+  text-align: center;
+}

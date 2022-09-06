@@ -153,11 +153,13 @@ a>h5 {
 .ContainerArtistes {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  /* flex-wrap: wrap; */
   background-color: rgb(16, 17, 26);
   width: 100%;
-  height: 100%;
-  /* gap: 10px; */
+  height: 100vh;
+  gap: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .search{
   margin-top: -17px;

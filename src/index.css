@@ -255,3 +255,18 @@ a>h5 {
   font-weight: bold;
   text-align: center;
 }
+.ImgArtist{
+  height: 50%;
+  border-radius: 12px;
+}
+.imgIframe{
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+
+}
+.imgIframe:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+
+}

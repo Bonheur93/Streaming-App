@@ -58,25 +58,29 @@ function Body() {
     }
     const renderArtists = () => {
         return artists.map((artist) => (
-          <div key={artist.id}>
-            {artist.album.images.length ? (
-              <>
-              <iframe style={{borderRadius:"12px"}} src={`https://open.spotify.com/embed/album/${artist.album.id}?utm_source=generator`} width="100%" height="100px" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              <img width={250} src={artist.album.images[0].url} alt="" />
-              </>
-            ) : (
-              <div>No Image</div>
-            )}
-            <div className="ArtistName">
-            {artist.name}
+            <div key={artist.id}>
+                {artist.album.images.length ? (
+                    <div className="imgIframe">
+                        <>
+                        <img className="ImgArtist" width={250} src={artist.album.images[0].url} alt="" />
+                            <iframe style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${artist.album.id}?utm_source=generator`} width="100%" height="100%" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            
+                        </>
+                    </div>
+
+                ) : (
+                    <div>No Image</div>
+                )}
+                <div className="ArtistName">
+                    {artist.name}
+                </div>
+
             </div>
-            
-          </div>
         ));
-            }
-  
-    
-        
+    }
+
+
+
 
     const renderPlaylist = () => {
         return artists.map(artist => (
@@ -138,7 +142,7 @@ function Body() {
                     {/* <div className="lds-ripple"><div></div><div></div></div> */}
                     {renderArtists()}
                     {/* {renderPlaylist()} */}
-                    
+
                 </div>
 
                 <footer className="footer">
@@ -153,13 +157,13 @@ function Body() {
                     </div>
 
                     <div className="containerProgress" >
-                    <div className="OneProgressBarre">
-                        <div className="TwoProgressbare">
+                        <div className="OneProgressBarre">
+                            <div className="TwoProgressbare">
 
+                            </div>
                         </div>
                     </div>
-                    </div>
-                    
+
 
                 </footer>
                 <div className="login" >

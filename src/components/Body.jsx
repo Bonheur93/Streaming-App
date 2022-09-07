@@ -113,8 +113,8 @@ function Body() {
 
     return (
 
-        <main className="main">
-            <div className="ContainerAsider">
+        <div className="principal">
+              <div className="ContainerAsider">
                 <Asider />
 
             </div>
@@ -139,17 +139,17 @@ function Body() {
 
 
                 <div className="ContainerArtistes">
-                    {/* <div className="lds-ripple"><div></div><div></div></div> */}
-                    {renderArtists()}
+                     {/* <div className="lds-ripple"><div></div><div></div></div> */}
+                     {renderArtists()}
                     {/* {renderPlaylist()} */}
-
                 </div>
+                   
 
-                <footer className="footer">
+              
+
+                 <footer className="footer">
                     <div className="containerFoot">
-                        {/* <div className="containerButtonsPlay">
-                           
-                        </div> */}
+                        
                         <img className="library" src="skip_previous.svg" alt="" />
                         <img className="library" src="play_circle.svg" alt="" />
                         <img className="library" src="skip_next.svg" alt="" />
@@ -165,15 +165,17 @@ function Body() {
                     </div>
 
 
-                </footer>
+                </footer> 
                 <div className="login" >
 
-                    <Login />
-                    <button onClick={handleGetPlaylist}>Playlist</button>
+                    {/* <Login /> */}
+                    {/* <button onClick={handleGetPlaylist}>Playlist</button> */}
                 </div>
 
             </div>
-        </main>
+        </div>
+          
+        
 
     )
 }

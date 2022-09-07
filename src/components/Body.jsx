@@ -62,9 +62,9 @@ function Body() {
                 {artist.album.images.length ? (
                     <div className="imgIframe">
                         <>
-                        <img className="ImgArtist" width={250} src={artist.album.images[0].url} alt="" />
+                            <img className="ImgArtist" width={250} src={artist.album.images[0].url} alt="" />
                             <iframe style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${artist.album.id}?utm_source=generator`} width="100%" height="100%" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                            
+
                         </>
                     </div>
 
@@ -114,68 +114,40 @@ function Body() {
     return (
 
         <div className="principal">
-              <div className="ContainerAsider">
+            <div className="ContainerAsider">
                 <Asider />
-
             </div>
 
+            <div className="header">
+                <div className="connectToSpotify" >
+                    <img className="library" src="login.svg" alt="" />
+                    <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Connectez-vous</a>
 
-            <div className="container" >
+                </div>
 
-                <header className="header">
-                    <div className="connectToSpotify" >
-                        <img className="library" src="login.svg" alt="" />
-                        <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Connectez-vous</a>
-
-                    </div>
-
-                    <form className="search" onSubmit={searchArtists}>
+                <form className="form" onSubmit={searchArtists}>
+                    <div className="partieHeader">
                         <input type="text" onChange={e => setSearchKey(e.target.value)} />
                         <button type={"submit"}>Search</button>
-                    </form>
-
-                </header>
-
-
-
-                <div className="ContainerArtistes">
-                     {/* <div className="lds-ripple"><div></div><div></div></div> */}
-                     {renderArtists()}
-                    {/* {renderPlaylist()} */}
-                </div>
-                   
-
-              
-
-                 <footer className="footer">
-                    <div className="containerFoot">
-                        
-                        <img className="library" src="skip_previous.svg" alt="" />
-                        <img className="library" src="play_circle.svg" alt="" />
-                        <img className="library" src="skip_next.svg" alt="" />
-
                     </div>
 
-                    <div className="containerProgress" >
-                        <div className="OneProgressBarre">
-                            <div className="TwoProgressbare">
-
-                            </div>
-                        </div>
+                    <div className="ContainerArtistes">
+                        {/* <div className="lds-ripple"><div></div><div></div></div> */}
+                        {renderArtists()}
+                        {/* {renderPlaylist()} */}
                     </div>
 
 
-                </footer> 
-                <div className="login" >
 
-                    {/* <Login /> */}
-                    {/* <button onClick={handleGetPlaylist}>Playlist</button> */}
-                </div>
+                </form>
 
             </div>
+
         </div>
-          
-        
+
+
+
+
 
     )
 }

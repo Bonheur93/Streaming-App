@@ -63,7 +63,15 @@ function Body() {
                     <div className="imgIframe">
                         <>
                             <img className="ImgArtist" width={250} src={artist.album.images[0].url} alt="" />
-                            <iframe style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${artist.album.id}?utm_source=generator`} width="100%" height="100%" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            <iframe style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${artist.album.id}?utm_source=generator`} 
+                            width="100%" 
+                            height="100%" 
+                            frameBorder="0" 
+                            allowFullScreen="" 
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            loading="lazy">
+
+                            </iframe>
 
                         </>
                     </div>
@@ -85,7 +93,7 @@ function Body() {
     const renderPlaylist = () => {
         return artists.map(artist => (
             <div key={artist.id}>
-                {artist.images.length ? <img width={150} src={artist.images[0].url} alt="" /> : <div>No Image</div>}
+                {artist.images.length ? <img width={100} src={artist.images[0].url} alt="" /> : <div>No Image</div>}
             </div>
         ))
     }
@@ -128,7 +136,7 @@ function Body() {
                 <form className="form" onSubmit={searchArtists}>
                     <div className="partieHeader">
                         <input type="text" onChange={e => setSearchKey(e.target.value)} />
-                        <button type={"submit"}>Search</button>
+                        <button type={"submit"}>recherche</button>
                     </div>
 
                     <div className="ContainerArtistes">
@@ -138,10 +146,18 @@ function Body() {
                     </div>
 
 
-
                 </form>
 
             </div>
+
+            {/* <div className="footer">
+                <div>
+                    <img className="library" src="skip_previous.svg" alt="" />
+                    <img className="library" src="play_circle.svg" alt="" />
+                    <img className="library" src="skip_next.svg" alt="" />
+                </div>
+
+            </div> */}
 
         </div>
 

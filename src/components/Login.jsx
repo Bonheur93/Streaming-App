@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import Body from "./Body";
 
 function Login() {
 
 
     const clientId = "840596917270-gr97pl94hlultfofenh6o5lkt6ml33fr.apps.googleusercontent.com";
 
-    const [showLoginButton, setShowLoginButton]= useState(true);
+    const [showLoginButton, setShowLoginButton] = useState(true);
     const [showLogoutButton, setShowLogoutButton] = useState(false)
 
 
-    const onLoginSuccess = (res) =>{
+    const onLoginSuccess = (res) => {
         console.log("Login Success:", res.profilObj);
         setShowLoginButton(false);
         setShowLogoutButton(true)
@@ -20,7 +21,7 @@ function Login() {
         console.log('Login Failed:', res);
     }
 
-    const onSignoutSuccess =() =>{
+    const onSignoutSuccess = () => {
         alert("you have been loger out sucessfully")
         setShowLoginButton(true);
         setShowLogoutButton(false);
@@ -30,23 +31,29 @@ function Login() {
 
         <div>
             {showLoginButton ?
-            <GoogleLogin
-                clientId= {clientId}
-                buttonText="Login with a google account"
-                onSuccess={onLoginSuccess}
-                onFailure={onFailureSuccess}
-                cookiePolicy={'single_host_origin'}
-            />: null
-        }
+                <GoogleLogin
+                    clientId={clientId}
+                    buttonText="Login with a google account"
+                    onSuccess={onLoginSuccess}
+                    onFailure={onFailureSuccess}
+                    cookiePolicy={'single_host_origin'}
+                /> : null
+            }
 
             {showLogoutButton ?
-            <GoogleLogout
-                clientId= {clientId}
-                buttonText="Logout"
-                onLogoutSuccess={onSignoutSuccess}
-            >
-            </GoogleLogout> : null
+                <GoogleLogout
+                    clientId={clientId}
+                    buttonText="Logout"
+                    onLogoutSuccess={onSignoutSuccess}
+                >
+                </GoogleLogout> : null
             }
+
+            <div className="connectToSpotify" >
+                <img className="library" src="login.svg" alt="" />
+                <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Connectez-vous</a>
+
+            </div>
 
         </div>
     )

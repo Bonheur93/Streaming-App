@@ -22,7 +22,7 @@ function Body() {
     const [searchKey, setSearchKey] = useState("")
     const [artists, setArtists] = useState([])
     const [data, setData] = useState([])
-    const [iframe, setId] = useState ("")
+    const [iframe, setId] = useState("")
 
     const handleGetPlaylist = () => {
         axios
@@ -65,10 +65,10 @@ function Body() {
         return artists.map((artist) => (
             <div key={artist.id} >
                 {artist.album.images.length ? (
-                    <div className="imgIframe" onClick={()=>{setId(artist.album.id)}}>
+                    <div className="imgIframe" onClick={() => { setId(artist.album.id) }}>
                         <>
                             <img className="ImgArtist" width={250} src={artist.album.images[0].url} alt="" />
-                           
+
                         </>
                     </div>
 
@@ -121,15 +121,14 @@ function Body() {
             <div className="ContainerAsider">
                 <Asider />
 
-                <iframe className="iframe"  style={{ borderRadius: "1px" }} src={`https://open.spotify.com/embed/album/${iframe}?utm_source=generator`} 
-                            width="90%" 
-                            height="330px" 
-                            frameBorder="0" 
-                            allowFullScreen="" 
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                            loading="lazy">
-
-                            </iframe>
+                <iframe className="iframe" style={{ borderRadius: "1px" }} src={`https://open.spotify.com/embed/album/${iframe}?utm_source=generator`}
+                    width="90%"
+                    height="330px"
+                    frameBorder="0"
+                    allowFullScreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy">
+                </iframe>
 
             </div>
 
@@ -139,12 +138,13 @@ function Body() {
                     <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Connectez-vous</a>
 
                 </div>
+                <div className="partieHeader">
+                    <input className="ImputText" type="ImputText" onChange={e => setSearchKey(e.target.value)} />
+                    <button type={"submit"}>recherche</button>
+                </div>
 
                 <form className="form" onSubmit={searchArtists}>
-                    <div className="partieHeader">
-                        <input className="ImputText" type="ImputText" onChange={e => setSearchKey(e.target.value)} />
-                        <button type={"submit"}>recherche</button>
-                    </div>
+
 
                     <div className="ContainerArtistes">
                         {/* <div className="lds-ripple"><div></div><div></div></div> */}

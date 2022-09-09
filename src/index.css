@@ -92,6 +92,7 @@ body{
 
 }
 
+
 .bibliothec {
   margin-left: 20px;
   margin-top: 50px;
@@ -139,10 +140,7 @@ a>h5 {
   margin-right: 10px;
 
 } */
-.form {
-  display: flex;
-  flex-direction: column;
-}
+
 
 .ContainerArtistes {
   display: grid;
@@ -153,6 +151,7 @@ a>h5 {
   gap: 10px;
   padding-top: -15px;
   padding-left: 10px;
+  margin-top: 10px;
   overflow: auto;
   /* padding-right: 10px; */
 }
@@ -246,6 +245,8 @@ a>h5 {
   font-family: inter;
   font-weight: bold;
   text-align: center;
+  margin-top: 5px;
+  border: solid 1Px;
 }
 .ImgArtist{
   height: 50%;
@@ -265,4 +266,8 @@ a>h5 {
 .iframe{
   display: block;
   margin-top: -250px;
+}
+.ImputText{
+  border-radius: 9px;
+  height: 15px;
 }

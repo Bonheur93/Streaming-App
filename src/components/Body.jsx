@@ -123,7 +123,7 @@ function Body() {
 
                 <iframe className="iframe"  style={{ borderRadius: "1px" }} src={`https://open.spotify.com/embed/album/${iframe}?utm_source=generator`} 
                             width="90%" 
-                            height="250px" 
+                            height="330px" 
                             frameBorder="0" 
                             allowFullScreen="" 
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 

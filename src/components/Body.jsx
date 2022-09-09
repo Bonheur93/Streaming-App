@@ -66,7 +66,7 @@ function Body() {
                 {artist.album.images.length ? (
                     <div className="imgIframe" >
                         <>
-                            <img onClick={handelFunction} className="ImgArtist" width={250} src={artist.album.images[0].url} alt="" />
+                            <img onClick={handelFunction} className="ImgArtist" width={250} src={artist.album.images[1].url} alt="" />
                             <iframe className="iframe"   id="lll" style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${artist.album.id}?utm_source=generator`} 
                             width="100%" 
                             height="100%" 

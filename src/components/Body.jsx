@@ -22,6 +22,7 @@ function Body() {
     const [searchKey, setSearchKey] = useState("")
     const [artists, setArtists] = useState([])
     const [data, setData] = useState([])
+    const [iframe, setId] = useState ("")
 
     const handleGetPlaylist = () => {
         axios
@@ -57,26 +58,17 @@ function Body() {
         setArtists(data.tracks.items)
     }
     const renderArtists = () => {
-        function handelFunction(){
-                    document.getElementById('lll').style.display="inherit"
-                    document.getElementById('m').style.display="none"
-        }
+        // function handelFunction(){
+        //             document.getElementById('lll').style.display="inherit"
+        //             document.getElementById('m').style.display="none"
+        // }
         return artists.map((artist) => (
             <div key={artist.id} >
                 {artist.album.images.length ? (
-                    <div className="imgIframe" >
+                    <div className="imgIframe" onClick={()=>{setId(artist.album.id)}}>
                         <>
-                            <img onClick={handelFunction} className="ImgArtist" width={250} src={artist.album.images[1].url} alt="" />
-                            <iframe className="iframe"   id="lll" style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${artist.album.id}?utm_source=generator`} 
-                            width="100%" 
-                            height="100%" 
-                            frameBorder="0" 
-                            allowFullScreen="" 
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                            loading="lazy">
-
-                            </iframe>
-
+                            <img className="ImgArtist" width={250} src={artist.album.images[0].url} alt="" />
+                           
                         </>
                     </div>
 
@@ -128,6 +120,17 @@ function Body() {
         <div className="principal">
             <div className="ContainerAsider">
                 <Asider />
+
+                <iframe className="iframe"  style={{ borderRadius: "1px" }} src={`https://open.spotify.com/embed/album/${iframe}?utm_source=generator`} 
+                            width="90%" 
+                            height="250px" 
+                            frameBorder="0" 
+                            allowFullScreen="" 
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            loading="lazy">
+
+                            </iframe>
+
             </div>
 
             <div className="header">

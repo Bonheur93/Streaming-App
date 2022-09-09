@@ -105,6 +105,7 @@ body{
 
 .library {
   width: 30px;
+  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 }
 
 .lienRef {
@@ -129,7 +130,7 @@ a>h5 {
   gap: 2px;
 }
 
-.header {
+/* .header {
   background-color:rgb(47, 47, 48);
   position: sticky;
   height: 100px;
@@ -137,7 +138,7 @@ a>h5 {
   margin-left: -11px;
   margin-right: 10px;
 
-}
+} */
 .form {
   display: flex;
   flex-direction: column;
@@ -147,17 +148,13 @@ a>h5 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   background-color: rgb(100, 101, 109);
-  width: 100%;
+  width: 1000px;
   height: 500px;
   gap: 10px;
   padding-top: -15px;
   padding-left: 10px;
-  overflow: scroll;
+  overflow: auto;
   /* padding-right: 10px; */
-}
-.search{
-  margin-top: -17px;
-  margin-left: 10px;
 }
 
 
@@ -264,4 +261,7 @@ a>h5 {
   transform: scale(1.05);
   cursor: pointer;
 
+}
+.iframe{
+  display: none;
 }

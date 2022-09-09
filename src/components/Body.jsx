@@ -57,13 +57,17 @@ function Body() {
         setArtists(data.tracks.items)
     }
     const renderArtists = () => {
+        function handelFunction(){
+                    document.getElementById('lll').style.display="inherit"
+                    document.getElementById('m').style.display="none"
+        }
         return artists.map((artist) => (
-            <div key={artist.id}>
+            <div key={artist.id} >
                 {artist.album.images.length ? (
-                    <div className="imgIframe">
+                    <div className="imgIframe" >
                         <>
-                            <img className="ImgArtist" width={250} src={artist.album.images[0].url} alt="" />
-                            <iframe style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${artist.album.id}?utm_source=generator`} 
+                            <img onClick={handelFunction} className="ImgArtist" width={250} src={artist.album.images[0].url} alt="" />
+                            <iframe className="iframe"   id="lll" style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${artist.album.id}?utm_source=generator`} 
                             width="100%" 
                             height="100%" 
                             frameBorder="0" 
@@ -135,7 +139,7 @@ function Body() {
 
                 <form className="form" onSubmit={searchArtists}>
                     <div className="partieHeader">
-                        <input type="text" onChange={e => setSearchKey(e.target.value)} />
+                        <input className="ImputText" type="ImputText" onChange={e => setSearchKey(e.target.value)} />
                         <button type={"submit"}>recherche</button>
                     </div>
 

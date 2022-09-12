@@ -1,9 +1,22 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import './index.css'
 import './App.css'
+import LoginToSpotify from './components/LoginToSpotify'
+import Body from './components/Body'
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [token, setToken] = useState("")
+ 
+  return(
+    <div>
+      {token === "" ?  <LoginToSpotify token={token} setToken={setToken} /> : <Body /> }
+
+
+    </div>
+    
+  )
 }
 
 export default App

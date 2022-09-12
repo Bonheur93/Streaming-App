@@ -18,7 +18,6 @@ function Body() {
     const RESPONSE_TYPE = "token"
     const SCOPES = ["user-read-currently-playing", "user-read-playback-state", "playlist-read-private"];
     const [token, setToken] = useState("")
-
     const [searchKey, setSearchKey] = useState("")
     const [artists, setArtists] = useState([])
     const [data, setData] = useState([])
@@ -68,7 +67,6 @@ function Body() {
                     <div className="imgIframe" onClick={() => { setId(artist.album.id) }}>
                         <>
                             <img className="ImgArtist" width={250} src={artist.album.images[0].url} alt="" />
-
                         </>
                     </div>
 
@@ -82,9 +80,6 @@ function Body() {
             </div>
         ));
     }
-
-
-
 
     const renderPlaylist = () => {
         return artists.map(artist => (
@@ -140,7 +135,7 @@ function Body() {
                 </div>
                 <div className="partieHeader">
                     <input className="ImputText" type="ImputText" onChange={e => setSearchKey(e.target.value)} />
-                    <button type={"submit"}>recherche</button>
+                    <button onClick={searchArtists} type={"submit"}>recherche</button>
                 </div>
 
                 <form className="form" onSubmit={searchArtists}>

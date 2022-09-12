@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 
-function Body({token}) {
+function Body({ token }) {
 
 
     const [searchKey, setSearchKey] = useState("")
@@ -119,10 +119,10 @@ function Body({token}) {
             </div>
 
             <div className="header">
-              
+
                 <div className="partieHeader">
                     <input className="ImputText" type="ImputText" onChange={e => setSearchKey(e.target.value)} />
-                    <button onClick={searchArtists} type={"submit"}>recherche</button>
+                    <img className="buttonRecherche" onClick={searchArtists} type={"submit"} src="search.svg" alt="" />
                 </div>
 
                 <form className="form" onSubmit={searchArtists}>

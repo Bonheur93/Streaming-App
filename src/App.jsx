@@ -11,7 +11,7 @@ function App() {
  
   return(
     <div>
-      {token === "" ?  <LoginToSpotify token={token} setToken={setToken} /> : <Body /> }
+      {token === "" ?  <LoginToSpotify token={token} setToken={setToken} /> : <Body  token={token} setToken={setToken} /> }
 
 
     </div>

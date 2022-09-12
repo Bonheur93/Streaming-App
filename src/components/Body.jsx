@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 
-function Body() {
+function Body({token}) {
 
 
     const [searchKey, setSearchKey] = useState("")

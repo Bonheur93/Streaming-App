@@ -121,7 +121,7 @@ function Body({ token }) {
             <div className="header">
 
                 <div className="partieHeader">
-                    <input className="ImputText" type="ImputText" onChange={e => setSearchKey(e.target.value)} />
+                    <input className="ImputText" type="ImputText" placeholder="Recherchez l'album" onChange={e => setSearchKey(e.target.value)} />
                     <img className="buttonRecherche" onClick={searchArtists} type={"submit"} src="search.svg" alt="" />
                 </div>
 

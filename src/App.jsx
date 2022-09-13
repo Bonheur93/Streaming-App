@@ -3,6 +3,7 @@ import './index.css'
 import './App.css'
 import LoginToSpotify from './components/LoginToSpotify'
 import Body from './components/Body'
+import Login from './components/Login'
 
 
 

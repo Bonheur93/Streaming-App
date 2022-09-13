@@ -8,7 +8,7 @@ function LoginToSpotify({token, setToken}) {
     const PLAYLIST_ENDPOINT = "https://api.spotify.com/v1/playlists/37i9dQZF1DWWY64wDtewQt"
 
     const CLIENT_ID = "93f33402d44f4128935734c09ea4fc41"
-    const REDIRECT_URI = "https://authentic-music.netlify.app"
+    const REDIRECT_URI = "http://localhost:5173"
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE = "token"
     const SCOPES = ["user-read-currently-playing", "user-read-playback-state", "playlist-read-private"];

@@ -10,10 +10,8 @@ function App() {
   const [token, setToken] = useState("")
  
   return(
-    <div>
-      {token === "" ?  <LoginToSpotify token={token} setToken={setToken} /> : <Body  token={token} setToken={setToken} /> }
-
-
+    <div className="LoginToSpotify">
+      {token === "" ?  <LoginToSpotify setToken={setToken} /> : <Body  token={token} /> }
     </div>
     
   )

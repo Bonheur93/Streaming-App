@@ -282,3 +282,7 @@ a>h5 {
   height: 30px;
  
 }
+.connectToSpotify{
+display: flex;
+justify-content: center;
+}

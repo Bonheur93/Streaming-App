@@ -5,16 +5,13 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
-
-
-
 function Body({ token }) {
 
 
     const [searchKey, setSearchKey] = useState("")
     const [artists, setArtists] = useState([])
     const [data, setData] = useState([])
-    const [iframe, setId] = useState("")
+    const [iframe, setId] = useState("0JGOiO34nwfUdDrD612dOp")
 
     const handleGetPlaylist = () => {
         axios
@@ -50,10 +47,7 @@ function Body({ token }) {
         setArtists(data.tracks.items)
     }
     const renderArtists = () => {
-        // function handelFunction(){
-        //             document.getElementById('lll').style.display="inherit"
-        //             document.getElementById('m').style.display="none"
-        // }
+       
         return artists.map((artist) => (
             <div key={artist.id} >
                 {artist.album.images.length ? (
@@ -82,22 +76,6 @@ function Body({ token }) {
         ))
     }
 
-
-    // useEffect(() => {
-    //     const hash = window.location.hash
-    //     let token = window.localStorage.getItem("token")
-    //     if (localStorage.getItem("accessToken")) {
-    //         setToken(localStorage.getItem("accessToken"));
-    //     }
-
-    //     if (!token && hash) {
-    //         token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
-
-    //         window.location.hash = ""
-    //         window.localStorage.setItem("token", token)
-    //     }
-
-    // }, []);
 
 
 

@@ -1,6 +1,7 @@
-import React from "react";
+// import React from "react";
 import Body from "./Body";
 import { useEffect, useState } from 'react';
+import '../index.css'
 
 
 function LoginToSpotify({token, setToken}) {
@@ -12,24 +13,24 @@ function LoginToSpotify({token, setToken}) {
     const RESPONSE_TYPE = "token"
     const SCOPES = ["user-read-currently-playing", "user-read-playback-state", "playlist-read-private"];
 
-
     useEffect(() => {
         const hash = window.location.hash
-        // let token = window.localStorage.getItem("token")
-        // if (localStorage.getItem("accessToken")) {
-        //     setToken(localStorage.getItem("accessToken"));
-        // }
+        
+        let token = window.localStorage.getItem("accessToken")
+        if (localStorage.getItem("accessToken")) {
+            setToken(localStorage.getItem("accessToken"));
+        }
         if (hash) {
-            token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
-            // window.location.hash = ""
-            // window.localStorage.setItem("token", token)
+          const token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
+            window.location.hash = ""
+            window.localStorage.setItem("accessToken", token)
             setToken(token)
         }
+        console.log(token)
     }, []);
 
-
-
-    return (<div className="connectToSpotify" >
+    return (
+    <div className="connectToSpotify" >
         <img className="library" src="login.svg" alt="" />
        <button><a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Connectez-vous pour Jouer</a></button> 
 
